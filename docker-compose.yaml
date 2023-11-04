@@ -1,0 +1,22 @@
+version: '3'
+services:
+  fastapi-app:
+    build:
+      context: ./fastapi-app  # Path to the directory containing your FastAPI app and Dockerfile
+      # dockerfile: ./fastapi-app/Dockerfile
+
+    ports:
+      - "8000:80"  # Map the host machine's port 8000 to the container's port 80
+
+  streamlit-campaign-performance:
+    build:
+      context: ./streamlit-app/campaign_performance  # Path to the directory containing your Streamlit app and Dockerfile
+    ports:
+      - "8501:8501"  # Map the host machine's port 8501 to the container's port 8501
+
+
+  streamlit-household_analytics:
+    build:
+      context: ./streamlit-app/household_analytics  # Path to the directory containing your Streamlit app and Dockerfile
+    ports:
+      - "8502:8502"  # Map the host machine's port 8501 to the container's port 8501
